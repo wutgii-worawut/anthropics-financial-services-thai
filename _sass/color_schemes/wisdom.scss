@@ -1,5 +1,5 @@
-// "Wisdom" color scheme — Yggdrasil's Archive theme
-// Deep blue ink + warm gold accents on a cream-paper background
+// "Wisdom" — softer, eye-friendly variant of Yggdrasil's Archive
+// Less yellow, less harsh contrast, more neutral parchment tones
 
 // === Font stacks ===
 $body-font-family: "Sarabun", "IBM Plex Sans Thai", -apple-system, BlinkMacSystemFont,
@@ -9,31 +9,30 @@ $body-heading-font-family: "IBM Plex Sans Thai", "Sarabun", -apple-system,
 $mono-font-family: "JetBrains Mono", "Sarabun", "SF Mono", Menlo, Consolas, monospace !important;
 
 // === Base sizes ===
-$body-font-size: 1.0625rem;       // ~17px (Thai reads better slightly larger)
-$body-line-height: 1.75;          // generous leading for Thai vowels
-$content-line-height: 1.75;
+$body-font-size: 1.0625rem;
+$body-line-height: 1.8;
+$content-line-height: 1.8;
 $body-heading-line-height: 1.4;
 
-// === Color palette — paper + ink + gold ===
-$body-background-color: #fbf8f1;            // cream paper
-$sidebar-color: #f4ecd8;                    // aged parchment
-$body-text-color: #1a2332;                  // deep ink blue
-$body-heading-color: #0e1a2b;               // near-black blue
-$link-color: #a67718;                       // burnished gold
-$btn-primary-color: #1a2332;
-$base-button-color: #f4ecd8;
+// === Color palette — softer, less yellow ===
+$body-background-color: #f7f5ec;             // warm off-white (less yellow)
+$sidebar-color: #efe9d6;                     // muted parchment
+$body-text-color: #2d3748;                   // slate-700 (softer than ink-blue)
+$body-heading-color: #1a202c;                // slate-800
+$link-color: #9c7c2e;                        // bronze gold (less saturated)
+$btn-primary-color: #2d3748;
+$base-button-color: #efe9d6;
 
 // === Search ===
-$search-background-color: #fff;
-$search-result-preview-color: #5a6678;
+$search-background-color: #fcfaf2;
+$search-result-preview-color: #6b7280;
 
 // === Code blocks ===
-$code-background-color: #f0e8d1;            // light parchment
-$feedback-color: darken($sidebar-color, 3%);
+$code-background-color: #ede5c8;
+$feedback-color: #e8e1cb;
 
 // === Borders ===
-$border-color: #d9cba6;
+$border-color: #d4c290;
 
-// === Tables — alternating rows for readability ===
-$table-background-color: #ffffff;
-
+// === Tables ===
+$table-background-color: #fcfaf2;
