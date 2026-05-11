@@ -1,0 +1,40 @@
+<!-- Google Fonts: Sarabun (Thai body), IBM Plex Sans Thai (Thai display), JetBrains Mono (code) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Mermaid for diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof mermaid !== "undefined") {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: "base",
+        themeVariables: {
+          primaryColor: "#fdf6e3",
+          primaryTextColor: "#1a2332",
+          primaryBorderColor: "#c79a3d",
+          lineColor: "#7a8794",
+          secondaryColor: "#f5ead0",
+          tertiaryColor: "#ffffff",
+          fontFamily: "'IBM Plex Sans Thai', 'Sarabun', sans-serif"
+        }
+      });
+      // Transform code blocks with language-mermaid into mermaid diagrams
+      document.querySelectorAll('pre code.language-mermaid, code.language-mermaid').forEach(function(el) {
+        var pre = el.closest('pre');
+        var div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = el.textContent;
+        if (pre) { pre.replaceWith(div); }
+        else { el.replaceWith(div); }
+      });
+      mermaid.run();
+    }
+  });
+</script>
+
+<!-- Meta -->
+<meta name="theme-color" content="#1a2332">
+<meta http-equiv="content-language" content="th">

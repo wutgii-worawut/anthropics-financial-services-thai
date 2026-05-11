@@ -28,8 +28,8 @@ aux_links_new_tab: true
 # Footer
 footer_content: "เอกสารแปล/อธิบายโดย Apex Oracle 🌳 — ต้นทาง: <a href=\"https://github.com/anthropics/financial-services\">anthropics/financial-services</a> · License: ตามต้นทาง"
 
-# Color scheme
-color_scheme: light
+# Color scheme — "Wisdom" (Yggdrasil's Archive theme)
+color_scheme: wisdom
 
 # Heading anchor links
 heading_anchors: true

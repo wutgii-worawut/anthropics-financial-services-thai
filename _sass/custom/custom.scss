@@ -1,0 +1,307 @@
+// === Thai-friendly typography refinements ===
+
+// Better Thai reading experience
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// Main content area — readable width and breathing room
+.main-content {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+  max-width: 78ch;
+
+  p {
+    margin-bottom: 1.25em;
+  }
+
+  // Headings: clear hierarchy with gold accents on H2
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-top: 0.5em;
+    margin-bottom: 0.75em;
+    padding-bottom: 0.5em;
+    border-bottom: 3px double #d9cba6;
+    color: #0e1a2b;
+  }
+
+  h2 {
+    font-size: 1.625rem;
+    font-weight: 600;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    padding-left: 0.6em;
+    border-left: 4px solid #c79a3d;
+    color: #1a2332;
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 1.75em;
+    color: #1a2332;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #3a4756;
+    margin-top: 1.5em;
+  }
+
+  // Lists
+  ul, ol {
+    margin-bottom: 1.25em;
+    li {
+      margin-bottom: 0.35em;
+      line-height: 1.8;
+    }
+    ul, ol { margin-bottom: 0.4em; }
+  }
+
+  // Links — gold underline that thickens on hover
+  a {
+    color: #a67718;
+    text-decoration: underline;
+    text-decoration-color: rgba(199, 154, 61, 0.4);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s ease, color 0.15s ease;
+    &:hover {
+      color: #7d5a14;
+      text-decoration-color: #c79a3d;
+      text-decoration-thickness: 2px;
+    }
+  }
+
+  // Blockquotes — parchment scroll
+  blockquote {
+    margin: 1.5em 0;
+    padding: 0.75em 1.25em;
+    border-left: 4px solid #c79a3d;
+    background: #fdf6e3;
+    color: #3a4756;
+    font-style: italic;
+    border-radius: 0 4px 4px 0;
+    p:last-child { margin-bottom: 0; }
+  }
+
+  // Tables — clean and readable
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 0.95em;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(26, 35, 50, 0.06);
+    border-radius: 4px;
+    overflow: hidden;
+
+    thead {
+      background: #1a2332;
+      color: #fdf6e3;
+      th {
+        padding: 0.75em 1em;
+        font-weight: 600;
+        text-align: left;
+        border: none;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #ece3c8;
+        &:nth-child(even) { background: #fbf8f1; }
+        &:hover { background: #f4ecd8; }
+        &:last-child { border-bottom: none; }
+      }
+      td {
+        padding: 0.65em 1em;
+        border: none;
+        vertical-align: top;
+      }
+    }
+  }
+
+  // Inline code — softer, parchment-tinted
+  code {
+    font-family: "JetBrains Mono", "Sarabun", monospace;
+    font-size: 0.9em;
+    padding: 0.15em 0.4em;
+    background: #f0e8d1;
+    color: #7d5a14;
+    border-radius: 3px;
+    border: 1px solid #e5d9b3;
+  }
+
+  // Code blocks — dark scholar's ink
+  pre {
+    background: #1a2332 !important;
+    color: #fdf6e3 !important;
+    border-radius: 6px;
+    padding: 1em 1.25em !important;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 1.5em 0;
+    overflow-x: auto;
+    box-shadow: inset 0 0 0 1px rgba(199, 154, 61, 0.2);
+
+    code {
+      background: transparent !important;
+      color: #fdf6e3 !important;
+      border: none;
+      padding: 0;
+      font-size: 0.9em;
+    }
+  }
+
+  // Mermaid diagrams — centered with gold border
+  .mermaid {
+    background: #fdf6e3;
+    padding: 1.5em;
+    border-radius: 6px;
+    border: 1px solid #d9cba6;
+    margin: 1.5em 0;
+    text-align: center;
+    overflow-x: auto;
+  }
+
+  // Horizontal rule — decorative
+  hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      #c79a3d 20%,
+      #c79a3d 80%,
+      transparent
+    );
+    margin: 2.5em 0;
+  }
+
+  // Definition lists
+  dl {
+    dt {
+      font-weight: 600;
+      color: #0e1a2b;
+      margin-top: 1em;
+    }
+    dd {
+      margin-left: 1.5em;
+      color: #3a4756;
+    }
+  }
+}
+
+// === Sidebar ===
+.side-bar {
+  background: #f4ecd8 !important;
+  border-right: 1px solid #d9cba6 !important;
+
+  .site-title {
+    font-family: "IBM Plex Sans Thai", serif;
+    font-weight: 700;
+    color: #0e1a2b !important;
+  }
+}
+
+// Navigation links
+.nav-list .nav-list-item {
+  .nav-list-link {
+    color: #3a4756 !important;
+    line-height: 1.6;
+    &:hover {
+      background: #fdf6e3 !important;
+      color: #7d5a14 !important;
+    }
+    &.active {
+      background: #c79a3d !important;
+      color: #ffffff !important;
+      font-weight: 600;
+    }
+  }
+}
+
+// === Search box ===
+.search-input {
+  font-family: "Sarabun", sans-serif !important;
+  font-size: 1rem !important;
+}
+
+// === Header (top bar) ===
+.site-header {
+  background: #fbf8f1 !important;
+  border-bottom: 1px solid #d9cba6 !important;
+}
+
+// === Footer ===
+.site-footer {
+  font-size: 0.9rem;
+  color: #5a6678;
+  border-top: 2px solid #d9cba6;
+  padding-top: 1.5em;
+  a { color: #a67718; }
+}
+
+// === Breadcrumbs ===
+.breadcrumb-nav {
+  font-size: 0.9rem;
+  color: #5a6678;
+  margin-bottom: 1.5em;
+
+  a { color: #a67718; }
+  .breadcrumb-nav-list-item:not(:last-child)::after {
+    content: "›";
+    color: #c79a3d;
+    margin: 0 0.5em;
+  }
+}
+
+// === Buttons on the home page ===
+.btn {
+  font-family: "IBM Plex Sans Thai", "Sarabun", sans-serif;
+  font-weight: 500;
+  border-radius: 4px;
+  &.btn-primary {
+    background: #1a2332 !important;
+    color: #fdf6e3 !important;
+    border-color: #1a2332 !important;
+    &:hover {
+      background: #c79a3d !important;
+      border-color: #c79a3d !important;
+    }
+  }
+}
+
+// === Back to top ===
+.back-to-top {
+  color: #a67718;
+}
+
+// === Print styles ===
+@media print {
+  .side-bar, .site-header, .breadcrumb-nav { display: none !important; }
+  .main-content { max-width: 100%; }
+  pre { white-space: pre-wrap; word-wrap: break-word; }
+}
+
+// === Mobile refinements ===
+@media (max-width: 768px) {
+  .main-content {
+    font-size: 1rem;
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.35rem; }
+    table { font-size: 0.85em; }
+  }
+}

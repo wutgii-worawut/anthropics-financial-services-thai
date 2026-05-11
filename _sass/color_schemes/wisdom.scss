@@ -1,0 +1,41 @@
+// "Wisdom" color scheme — Yggdrasil's Archive theme
+// Deep blue ink + warm gold accents on a cream-paper background
+
+// === Font stacks ===
+$body-font-family: "Sarabun", "IBM Plex Sans Thai", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+$body-heading-font-family: "IBM Plex Sans Thai", "Sarabun", -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+$mono-font-family: "JetBrains Mono", "Sarabun", "SF Mono", Menlo, Consolas, monospace !important;
+
+// === Base sizes ===
+$body-font-size: 1.0625rem;       // ~17px (Thai reads better slightly larger)
+$body-line-height: 1.75;          // generous leading for Thai vowels
+$content-line-height: 1.75;
+$body-heading-line-height: 1.4;
+
+// === Color palette — paper + ink + gold ===
+$body-background-color: #fbf8f1;            // cream paper
+$sidebar-color: #f4ecd8;                    // aged parchment
+$body-text-color: #1a2332;                  // deep ink blue
+$body-heading-color: #0e1a2b;               // near-black blue
+$link-color: #a67718;                       // burnished gold
+$btn-primary-color: #1a2332;
+$base-button-color: #f4ecd8;
+
+// === Search ===
+$search-background-color: #fff;
+$search-result-preview-color: #5a6678;
+
+// === Code blocks ===
+$code-background-color: #f0e8d1;            // light parchment
+$feedback-color: darken($sidebar-color, 3%);
+
+// === Borders ===
+$border-color: #d9cba6;
+
+// === Tables — alternating rows for readability ===
+$table-background-color: #ffffff;
+
+// Inherit defaults
+@import "./light";
