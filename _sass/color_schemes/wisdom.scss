@@ -2,16 +2,16 @@
 // Cream paper + ink black + true gold accent
 // Light luxury — refined and readable
 
-// === Font stacks ===
-$body-font-family: "Cormorant Garamond", "Sarabun", "IBM Plex Sans Thai", Georgia, serif !important;
-$body-heading-font-family: "DM Serif Display", "Cormorant Garamond", "IBM Plex Sans Thai", Georgia, serif !important;
-$mono-font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace !important;
+// === Font stacks — Thai-first for Thai content ===
+$body-font-family: "Sarabun", "IBM Plex Sans Thai", "Cormorant Garamond", -apple-system, Georgia, sans-serif !important;
+$body-heading-font-family: "IBM Plex Sans Thai", "Sarabun", "DM Serif Display", -apple-system, Georgia, sans-serif !important;
+$mono-font-family: "JetBrains Mono", "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace !important;
 
 // === Base sizes ===
-$body-font-size: 1.0875rem;
-$body-line-height: 1.85;
-$content-line-height: 1.85;
-$body-heading-line-height: 1.25;
+$body-font-size: 1rem;
+$body-line-height: 1.8;
+$content-line-height: 1.8;
+$body-heading-line-height: 1.4;
 
 // === Color palette — light editorial ===
 $body-background-color: #faf6ec;
