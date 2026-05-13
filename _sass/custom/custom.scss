@@ -1,36 +1,34 @@
 // =====================================================================
-// EDITORIAL ART DECO — Claude for Financial Services (ภาษาไทย)
-// Wall Street Quarterly aesthetic — ink-black + true gold + cream serif
+// EDITORIAL LIGHT — Claude for Financial Services (ภาษาไทย)
+// Financial Times feel — cream paper + ink black + true gold
 // Cormorant Garamond + DM Serif Display + Sarabun (Thai)
 // =====================================================================
 
 // ===== Color tokens =====
-$ink-950:       #07070a;       // deepest black
-$ink-900:       #0e0e10;       // page bg
-$ink-800:       #16161a;       // sidebar / cards
-$ink-700:       #1f1f25;       // raised
-$ink-600:       #2a2a30;       // borders soft
-$ink-500:       #3a3a40;       // borders strong
+$ink-950:       #000000;
+$ink-900:       #0d0d0d;       // headings (deepest)
+$ink-800:       #1a1a1a;       // body text
+$ink-700:       #2d2d2d;
+$ink-600:       #4a4a4a;
+$ink-500:       #6b6655;       // muted
 
-$cream-50:      #faf6e7;       // brightest
-$cream-100:     #f3ead0;       // headings
-$cream-200:     #e6dab8;       // body strong
-$cream-300:     #d8d2b8;       // body
-$cream-400:     #aaa490;       // muted
-$cream-500:     #888070;       // very muted
+$paper-50:      #fffaf0;       // brightest
+$paper-100:     #fbf8ec;       // cards
+$paper-200:     #faf6ec;       // page bg
+$paper-300:     #f2ecd8;       // sidebar / alt row
+$paper-400:     #ebe3c0;       // raised border
+$paper-500:     #d4c590;       // strong border
 
-$gold-50:       #fff8dc;       // pale gold (rare)
-$gold-300:      #e3c66c;       // soft gold
-$gold-400:      #d4af37;       // true gold (primary)
-$gold-500:      #b8893a;       // deep gold
-$gold-600:      #8e6818;       // gold hover/border
-
-$accent-burgundy:#7a2e2e;      // sparse accent for emphasis/red flags
+$gold-300:      #c4a345;       // soft gold
+$gold-400:      #a8861e;       // true gold (primary)
+$gold-500:      #8e6a14;       // deep gold (hover)
+$gold-600:      #6a4f0e;       // gold dark
+$gold-100:      #f0e3b4;       // pale gold bg
 
 // ===== Global =====
 html {
   scroll-behavior: smooth;
-  background: $ink-900;
+  background: $paper-200;
 }
 
 body {
@@ -38,37 +36,30 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  background: $ink-900 !important;
-  color: $cream-300 !important;
-  position: relative;
+  background: $paper-200 !important;
+  color: $ink-800 !important;
 }
 
 #bg-canvas {
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
-  opacity: 0.85;
-}
-
-.side-bar, .main, .main-content-wrap, .site-header, .site-footer {
-  position: relative;
-  z-index: 2;
+  opacity: 0.55;
 }
 
 .site-header {
-  background: rgba($ink-900, 0.88) !important;
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba($gold-400, 0.3) !important;
-  box-shadow: 0 1px 0 rgba($gold-400, 0.08), 0 20px 40px -20px $ink-950;
+  background: rgba($paper-200, 0.95) !important;
+  border-bottom: 1px solid $paper-500 !important;
+  box-shadow: 0 1px 0 rgba($gold-400, 0.15);
 }
 
 .site-title {
   font-family: "DM Serif Display", "IBM Plex Sans Thai", serif !important;
   font-weight: 400 !important;
   font-size: 1.1rem !important;
-  color: $cream-100 !important;
-  letter-spacing: 0.18em !important;
+  color: $ink-900 !important;
+  letter-spacing: 0.16em !important;
   text-transform: uppercase;
 
   &::before {
@@ -80,16 +71,15 @@ body {
 }
 
 .side-bar {
-  background: rgba($ink-800, 0.85) !important;
-  backdrop-filter: blur(12px);
-  border-right: 1px solid rgba($gold-400, 0.18) !important;
+  background: $paper-300 !important;
+  border-right: 1px solid $paper-500 !important;
 }
 
 .nav-list .nav-list-item {
   font-family: "Cormorant Garamond", "Sarabun", serif !important;
 
   .nav-list-link {
-    color: $cream-400 !important;
+    color: $ink-600 !important;
     line-height: 1.5 !important;
     font-size: 1.02em !important;
     border-radius: 0;
@@ -97,14 +87,14 @@ body {
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-      background: rgba($gold-400, 0.05) !important;
-      color: $gold-300 !important;
-      border-left-color: $gold-500 !important;
+      background: rgba($gold-400, 0.08) !important;
+      color: $gold-500 !important;
+      border-left-color: $gold-400 !important;
       padding-left: 1.2em !important;
     }
     &.active {
       background: linear-gradient(90deg, rgba($gold-400, 0.18) 0%, transparent 100%) !important;
-      color: $gold-400 !important;
+      color: $gold-600 !important;
       font-weight: 600 !important;
       border-left-color: $gold-400 !important;
     }
@@ -116,17 +106,17 @@ body {
 .search-input {
   font-family: "Cormorant Garamond", "Sarabun", serif !important;
   font-size: 1.05em !important;
-  background: rgba($ink-700, 0.9) !important;
-  border: 1px solid $ink-500 !important;
-  color: $cream-200 !important;
-  &::placeholder { color: $cream-500; font-style: italic; }
+  background: $paper-50 !important;
+  border: 1px solid $paper-500 !important;
+  color: $ink-800 !important;
+  &::placeholder { color: $ink-500; font-style: italic; }
   &:focus { border-color: $gold-400 !important; box-shadow: 0 0 0 3px rgba($gold-400, 0.15) !important; }
 }
 
 .search-results {
-  background: $ink-800;
-  border: 1px solid $ink-500;
-  color: $cream-300;
+  background: $paper-50;
+  border: 1px solid $paper-500;
+  color: $ink-800;
 }
 
 .main-content-wrap {
@@ -136,34 +126,32 @@ body {
 .main-content {
   font-size: 1.1rem !important;
   line-height: 1.9 !important;
-  letter-spacing: 0.005em;
+  letter-spacing: 0.003em;
   max-width: 78ch;
-  color: $cream-300 !important;
+  color: $ink-800 !important;
   font-family: "Cormorant Garamond", "Sarabun", "IBM Plex Sans Thai", serif !important;
   font-feature-settings: "onum" 1, "liga" 1;
 
   p {
     margin-bottom: 1.35em;
-    color: $cream-300;
+    color: $ink-800;
   }
 
-  // ===== Headings — Art Deco —
+  // ===== Headings — Art Deco light =====
   h1 {
     font-family: "DM Serif Display", "IBM Plex Sans Thai", serif !important;
     font-size: 3rem !important;
     font-weight: 400 !important;
-    letter-spacing: 0.02em !important;
+    letter-spacing: 0.01em !important;
     margin-top: 0.4em !important;
     margin-bottom: 1.1em !important;
     padding: 0.3em 0 0.6em 0;
-    color: $cream-50 !important;
+    color: $ink-900 !important;
     line-height: 1.15 !important;
     position: relative;
     text-align: center;
-
-    // Art deco double rule
-    border-top: 1px solid rgba($gold-400, 0.4) !important;
-    border-bottom: 1px solid rgba($gold-400, 0.4) !important;
+    border-top: 1px solid $gold-400 !important;
+    border-bottom: 1px solid $gold-400 !important;
 
     &::before, &::after {
       content: "✦";
@@ -181,14 +169,14 @@ body {
     font-family: "DM Serif Display", "IBM Plex Sans Thai", serif !important;
     font-size: 1.85rem !important;
     font-weight: 400 !important;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     margin-top: 2.4em !important;
     margin-bottom: 0.9em !important;
-    color: $cream-100 !important;
+    color: $ink-900 !important;
     line-height: 1.3 !important;
     position: relative;
     padding-bottom: 0.4em;
-    border-bottom: 1px solid rgba($gold-400, 0.25) !important;
+    border-bottom: 1px solid $gold-400 !important;
 
     &::before {
       content: "§ ";
@@ -209,7 +197,7 @@ body {
     letter-spacing: 0.01em;
     margin-top: 1.8em !important;
     margin-bottom: 0.55em !important;
-    color: $gold-300 !important;
+    color: $gold-600 !important;
     line-height: 1.4 !important;
   }
 
@@ -220,12 +208,12 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-top: 1.6em !important;
-    color: $cream-200 !important;
+    color: $ink-700 !important;
   }
 
   h5, h6 {
     font-family: "DM Serif Display", "IBM Plex Sans Thai", serif !important;
-    color: $cream-400 !important;
+    color: $ink-500 !important;
     font-weight: 400 !important;
     text-transform: uppercase;
     letter-spacing: 0.16em;
@@ -242,7 +230,7 @@ body {
       position: relative;
       margin-bottom: 0.45em;
       line-height: 1.85;
-      color: $cream-300;
+      color: $ink-800;
 
       &::before {
         content: "◆";
@@ -269,14 +257,14 @@ body {
       position: relative;
       margin-bottom: 0.45em;
       line-height: 1.85;
-      color: $cream-300;
+      color: $ink-800;
 
       &::before {
         content: counter(list-counter) ".";
         position: absolute;
         left: -2em;
         top: 0;
-        color: $gold-400;
+        color: $gold-500;
         font-family: "DM Serif Display", serif;
         font-weight: 400;
         font-size: 1.05em;
@@ -287,26 +275,26 @@ body {
   }
 
   strong {
-    color: $cream-50;
+    color: $ink-900;
     font-weight: 700;
   }
 
   em {
-    color: $gold-300;
+    color: $gold-600;
     font-style: italic;
   }
 
   a:not(.btn) {
-    color: $gold-400 !important;
+    color: $gold-500 !important;
     text-decoration: none !important;
-    border-bottom: 1px solid rgba($gold-400, 0.4) !important;
+    border-bottom: 1px solid rgba($gold-400, 0.5) !important;
     padding-bottom: 1px;
     transition: all 0.2s ease;
 
     &:hover {
-      color: $gold-300 !important;
-      border-bottom-color: $gold-300 !important;
-      background: rgba($gold-400, 0.05);
+      color: $gold-600 !important;
+      border-bottom-color: $gold-500 !important;
+      background: rgba($gold-400, 0.08);
     }
   }
 
@@ -314,15 +302,15 @@ body {
     margin: 2em 0 !important;
     padding: 1.2em 1.6em 1.2em 2.4em !important;
     border: none !important;
-    background: rgba($ink-800, 0.6) !important;
-    color: $cream-200 !important;
+    background: $paper-100 !important;
+    color: $ink-800 !important;
     font-family: "Cormorant Garamond", "Sarabun", serif !important;
     font-style: italic;
     font-size: 1.18em;
     line-height: 1.75;
     position: relative;
-    border-left: 2px solid $gold-400 !important;
-    border-right: 2px solid $gold-400 !important;
+    border-left: 3px solid $gold-400 !important;
+    border-right: 1px solid $paper-500 !important;
 
     &::before {
       content: "❝";
@@ -330,7 +318,7 @@ body {
       left: 0.6em;
       top: 0.05em;
       font-size: 2.4em;
-      color: rgba($gold-400, 0.5);
+      color: rgba($gold-400, 0.4);
       line-height: 1;
       font-family: Georgia, serif;
     }
@@ -341,11 +329,11 @@ body {
 
   .table-wrapper {
     border-radius: 0 !important;
-    box-shadow: 0 1px 0 rgba($gold-400, 0.3), 0 20px 50px -20px rgba($gold-400, 0.1) !important;
+    box-shadow: 0 1px 0 $paper-500, 0 12px 30px -8px rgba($ink-900, 0.06) !important;
     margin: 2em 0 !important;
-    background: $ink-800 !important;
+    background: $paper-100 !important;
     overflow: hidden !important;
-    border: 1px solid rgba($gold-400, 0.2) !important;
+    border: 1px solid $paper-500 !important;
   }
 
   table,
@@ -357,35 +345,36 @@ body {
     margin: 0 !important;
     font-size: 0.98em !important;
     font-family: "Cormorant Garamond", "Sarabun", serif !important;
-    background: $ink-800 !important;
+    background: $paper-100 !important;
     border: none !important;
 
     thead {
-      background: linear-gradient(180deg, $ink-900 0%, $ink-800 100%) !important;
-      tr { background: transparent !important; }
+      background: $ink-900 !important;
+      tr { background: $ink-900 !important; }
       th,
       .main-content & th {
         padding: 1.1em 1.3em !important;
         font-family: "DM Serif Display", "IBM Plex Sans Thai", serif !important;
         font-weight: 400 !important;
-        color: $gold-400 !important;
+        color: $gold-300 !important;
         text-align: left !important;
         text-transform: uppercase;
         letter-spacing: 0.12em !important;
         border: none !important;
-        border-bottom: 1px solid $gold-400 !important;
+        border-bottom: 2px solid $gold-400 !important;
         font-size: 0.78em !important;
+        background: $ink-900 !important;
       }
     }
 
     tbody {
       tr {
-        background: transparent !important;
-        border-bottom: 1px solid $ink-600 !important;
+        background: $paper-100 !important;
+        border-bottom: 1px solid $paper-400 !important;
         transition: background 0.2s ease;
 
-        &:nth-child(even) { background: rgba($ink-700, 0.5) !important; }
-        &:hover { background: rgba($gold-400, 0.06) !important; }
+        &:nth-child(even) { background: rgba($paper-300, 0.4) !important; }
+        &:hover { background: rgba($gold-400, 0.08) !important; }
         &:last-child { border-bottom: none !important; }
       }
 
@@ -394,7 +383,7 @@ body {
         padding: 0.95em 1.3em !important;
         border: none !important;
         vertical-align: top !important;
-        color: $cream-300 !important;
+        color: $ink-800 !important;
         background: transparent !important;
         font-size: 1.02em !important;
       }
@@ -405,10 +394,10 @@ body {
     font-family: "JetBrains Mono", monospace !important;
     font-size: 0.85em !important;
     padding: 0.18em 0.5em !important;
-    background: rgba($gold-400, 0.1) !important;
-    color: $gold-300 !important;
+    background: $gold-100 !important;
+    color: $gold-600 !important;
     border-radius: 2px !important;
-    border: 1px solid rgba($gold-400, 0.25) !important;
+    border: 1px solid rgba($gold-400, 0.35) !important;
     white-space: nowrap;
   }
 
@@ -416,18 +405,18 @@ body {
   div.highlighter-rouge,
   figure.highlight,
   div.highlight {
-    background: $ink-950 !important;
-    color: $cream-200 !important;
+    background: #1a1a1a !important;
+    color: #e8dfbe !important;
     border-radius: 3px !important;
     padding: 1.2em 1.4em !important;
     margin: 2em 0 !important;
     overflow-x: auto !important;
-    box-shadow: 0 4px 20px rgba($ink-950, 0.6), 0 1px 0 $gold-400 inset !important;
-    border-top: 1px solid $gold-400 !important;
+    box-shadow: 0 4px 18px rgba($ink-900, 0.12) !important;
+    border-left: 3px solid $gold-400 !important;
 
     pre, code {
       background: transparent !important;
-      color: $cream-200 !important;
+      color: #e8dfbe !important;
       border: none !important;
       padding: 0 !important;
       font-family: "JetBrains Mono", monospace !important;
@@ -438,23 +427,23 @@ body {
   }
 
   .highlight {
-    .c, .c1, .cm  { color: #6a6258 !important; font-style: italic; }
-    .k, .kd, .kn, .kr { color: $gold-400 !important; }
+    .c, .c1, .cm  { color: #8a8270 !important; font-style: italic; }
+    .k, .kd, .kn, .kr { color: #d4a85a !important; }
     .s, .s1, .s2 { color: #c4b884 !important; }
-    .n, .nx      { color: $cream-200 !important; }
-    .nf, .nc     { color: $gold-300 !important; }
+    .n, .nx      { color: #e8dfbe !important; }
+    .nf, .nc     { color: #e3c98c !important; }
     .nb          { color: #d4c692 !important; }
-    .mi, .m, .mf { color: $gold-400 !important; }
+    .mi, .m, .mf { color: #d4a85a !important; }
     .o, .ow      { color: #d4af37 !important; }
-    .p           { color: $cream-400 !important; }
-    .err         { color: #d4756c !important; }
+    .p           { color: #ada593 !important; }
+    .err         { color: #c47878 !important; }
   }
 
   .mermaid {
-    background: rgba($ink-800, 0.7) !important;
+    background: $paper-100 !important;
     padding: 1.8em !important;
     border-radius: 3px !important;
-    border: 1px solid rgba($gold-400, 0.2) !important;
+    border: 1px solid $paper-500 !important;
     margin: 2em 0 !important;
     text-align: center;
     overflow-x: auto;
@@ -481,15 +470,15 @@ body {
   img {
     max-width: 100%;
     border-radius: 2px;
-    box-shadow: 0 8px 30px rgba($ink-950, 0.4);
+    box-shadow: 0 4px 18px rgba($ink-900, 0.1);
     margin: 1em 0;
-    border: 1px solid rgba($gold-400, 0.2);
+    border: 1px solid $paper-500;
   }
 
   kbd {
-    background: $ink-700;
-    color: $cream-100;
-    border: 1px solid $gold-500;
+    background: $paper-300;
+    color: $ink-900;
+    border: 1px solid $gold-400;
     border-bottom-width: 2px;
     border-radius: 2px;
     padding: 0.15em 0.45em;
@@ -509,25 +498,25 @@ body {
   font-size: 0.82em !important;
 
   &.btn-primary {
-    background: transparent !important;
-    color: $gold-400 !important;
-    border: 1px solid $gold-400 !important;
-    box-shadow: inset 0 0 0 1px transparent;
+    background: $ink-900 !important;
+    color: $paper-50 !important;
+    border: 1px solid $ink-900 !important;
     &:hover {
       background: $gold-400 !important;
       color: $ink-900 !important;
-      box-shadow: 0 0 30px rgba($gold-400, 0.4), inset 0 0 0 1px $cream-50;
+      border-color: $gold-400 !important;
+      box-shadow: 0 6px 20px rgba($gold-400, 0.35);
       text-decoration: none !important;
     }
   }
 
   &:not(.btn-primary) {
-    background: transparent !important;
-    color: $cream-200 !important;
-    border: 1px solid $cream-500 !important;
+    background: $paper-100 !important;
+    color: $ink-900 !important;
+    border: 1px solid $paper-500 !important;
     &:hover {
       border-color: $gold-400 !important;
-      color: $gold-400 !important;
+      color: $gold-600 !important;
       text-decoration: none !important;
     }
   }
@@ -535,19 +524,19 @@ body {
 
 .site-footer {
   font-size: 0.95rem !important;
-  color: $cream-500 !important;
-  border-top: 1px solid rgba($gold-400, 0.2) !important;
+  color: $ink-500 !important;
+  border-top: 1px solid $paper-500 !important;
   padding-top: 1.6em !important;
   margin-top: 4em;
   font-family: "Cormorant Garamond", "Sarabun", serif !important;
   font-style: italic;
   text-align: center;
-  a { color: $gold-400 !important; }
+  a { color: $gold-500 !important; }
 }
 
 .breadcrumb-nav {
   font-size: 0.95rem !important;
-  color: $cream-400 !important;
+  color: $ink-600 !important;
   margin-bottom: 1.5em !important;
   padding: 0.55em 0 !important;
   background: transparent;
@@ -555,7 +544,7 @@ body {
   font-family: "Cormorant Garamond", "Sarabun", serif !important;
   font-style: italic;
 
-  a { color: $gold-400 !important; }
+  a { color: $gold-500 !important; }
   .breadcrumb-nav-list-item:not(:last-child)::after {
     content: "  ✦  ";
     color: $gold-400;
@@ -565,21 +554,21 @@ body {
 }
 
 .back-to-top {
-  color: $gold-400 !important;
+  color: $gold-500 !important;
   font-family: "Cormorant Garamond", serif !important;
   font-style: italic;
-  &:hover { color: $gold-300 !important; }
+  &:hover { color: $gold-600 !important; }
 }
 
 .aux-nav-list .aux-nav-list-item {
   .site-button {
-    color: $cream-400 !important;
+    color: $ink-600 !important;
     font-family: "Cormorant Garamond", "Sarabun", serif !important;
     font-style: italic;
     font-size: 0.98em;
     &:hover {
-      color: $gold-400 !important;
-      background: rgba($gold-400, 0.08) !important;
+      color: $gold-600 !important;
+      background: rgba($gold-400, 0.1) !important;
     }
   }
 }
@@ -589,22 +578,20 @@ body {
   &:hover { color: $gold-400 !important; }
 }
 
-// Hero — Art Deco luminous gold
 .fs-9 {
   font-family: "DM Serif Display", "IBM Plex Sans Thai", serif !important;
   font-weight: 400 !important;
-  letter-spacing: 0.04em !important;
-  background: linear-gradient(135deg, $cream-50 0%, $gold-400 50%, $gold-600 100%);
+  letter-spacing: 0.02em !important;
+  background: linear-gradient(135deg, $ink-900 0%, $gold-500 50%, $gold-400 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 60px rgba($gold-400, 0.2);
 }
 
 .fs-6 {
   font-family: "Cormorant Garamond", "Sarabun", serif !important;
   font-style: italic;
-  color: $cream-400 !important;
+  color: $ink-500 !important;
   font-size: 1.2em !important;
   font-weight: 400;
 }

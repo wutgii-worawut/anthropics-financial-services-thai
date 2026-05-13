@@ -21,14 +21,14 @@
     if (typeof mermaid !== "undefined") {
       mermaid.initialize({
         startOnLoad: false,
-        theme: "dark",
+        theme: "base",
         themeVariables: {
-          primaryColor: "#1f1f25",
-          primaryTextColor: "#f3ead0",
-          primaryBorderColor: "#d4af37",
-          lineColor: "#b8893a",
-          secondaryColor: "#2a2a30",
-          tertiaryColor: "#16161a",
+          primaryColor: "#fbf8ec",
+          primaryTextColor: "#0d0d0d",
+          primaryBorderColor: "#a8861e",
+          lineColor: "#8e6a14",
+          secondaryColor: "#f0e3b4",
+          tertiaryColor: "#faf6ec",
           fontFamily: "'Cormorant Garamond', 'Sarabun', serif"
         }
       });
@@ -54,7 +54,7 @@
       document.body.insertBefore(canvas, document.body.firstChild);
 
       const scene = new THREE.Scene();
-      scene.fog = new THREE.FogExp2(0x0e0e10, 0.04);
+      scene.fog = new THREE.FogExp2(0xfaf6ec, 0.035);
 
       const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
       camera.position.z = 14;
@@ -64,23 +64,23 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
 
       // Lights — moody, single key + warm fill
-      const ambient = new THREE.AmbientLight(0x1f1f25, 0.7);
+      const ambient = new THREE.AmbientLight(0xfaf6ec, 0.85);
       scene.add(ambient);
-      const key = new THREE.PointLight(0xd4af37, 1.6, 30);
+      const key = new THREE.PointLight(0xa8861e, 1.4, 30);
       key.position.set(6, 4, 6);
       scene.add(key);
-      const fill = new THREE.PointLight(0xb8893a, 0.5, 25);
+      const fill = new THREE.PointLight(0xc4a345, 0.45, 25);
       fill.position.set(-8, -3, 4);
       scene.add(fill);
 
       // Gold particles — small octahedrons, mix of sizes
       const particles = [];
       const goldMat = new THREE.MeshStandardMaterial({
-        color: 0xd4af37,
-        emissive: 0xb8893a,
-        emissiveIntensity: 0.5,
-        metalness: 0.85,
-        roughness: 0.25,
+        color: 0xa8861e,
+        emissive: 0x8e6a14,
+        emissiveIntensity: 0.35,
+        metalness: 0.7,
+        roughness: 0.3,
       });
 
       const N = 60;
@@ -147,5 +147,5 @@
 </script>
 
 <!-- Meta -->
-<meta name="theme-color" content="#0e0e10">
+<meta name="theme-color" content="#faf6ec">
 <meta http-equiv="content-language" content="th">
