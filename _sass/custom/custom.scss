@@ -76,7 +76,7 @@ body {
 }
 
 .nav-list .nav-list-item {
-  font-family: "Cormorant Garamond", "Sarabun", serif !important;
+  font-family: "Sarabun", "IBM Plex Sans Thai", "Cormorant Garamond", Georgia, sans-serif !important;
 
   .nav-list-link {
     color: $ink-600 !important;
@@ -104,7 +104,7 @@ body {
 }
 
 .search-input {
-  font-family: "Cormorant Garamond", "Sarabun", serif !important;
+  font-family: "Sarabun", "IBM Plex Sans Thai", "Cormorant Garamond", Georgia, sans-serif !important;
   font-size: 1.05em !important;
   background: $paper-50 !important;
   border: 1px solid $paper-500 !important;
@@ -200,7 +200,7 @@ body {
   }
 
   h4 {
-    font-family: "Cormorant Garamond", "IBM Plex Sans Thai", serif !important;
+    font-family: "IBM Plex Sans Thai", "Sarabun", "Cormorant Garamond", sans-serif !important;
     font-size: 1.2rem !important;
     font-weight: 600 !important;
     text-transform: uppercase;
@@ -302,7 +302,7 @@ body {
     border: none !important;
     background: $paper-100 !important;
     color: $ink-800 !important;
-    font-family: "Cormorant Garamond", "Sarabun", serif !important;
+    font-family: "Sarabun", "IBM Plex Sans Thai", "Cormorant Garamond", Georgia, sans-serif !important;
     font-style: italic;
     font-size: 1.18em;
     line-height: 1.75;
@@ -342,7 +342,7 @@ body {
     border-spacing: 0 !important;
     margin: 0 !important;
     font-size: 0.98em !important;
-    font-family: "Cormorant Garamond", "Sarabun", serif !important;
+    font-family: "Sarabun", "IBM Plex Sans Thai", "Cormorant Garamond", Georgia, sans-serif !important;
     background: $paper-100 !important;
     border: none !important;
 
@@ -527,7 +527,7 @@ body {
   border-top: 1px solid $paper-500 !important;
   padding-top: 1.6em !important;
   margin-top: 4em;
-  font-family: "Cormorant Garamond", "Sarabun", serif !important;
+  font-family: "Sarabun", "IBM Plex Sans Thai", "Cormorant Garamond", Georgia, sans-serif !important;
   font-style: italic;
   text-align: center;
   a { color: $gold-500 !important; }
@@ -540,7 +540,7 @@ body {
   padding: 0.55em 0 !important;
   background: transparent;
   border: none !important;
-  font-family: "Cormorant Garamond", "Sarabun", serif !important;
+  font-family: "Sarabun", "IBM Plex Sans Thai", "Cormorant Garamond", Georgia, sans-serif !important;
   font-style: italic;
 
   a { color: $gold-500 !important; }
@@ -554,7 +554,7 @@ body {
 
 .back-to-top {
   color: $gold-500 !important;
-  font-family: "Cormorant Garamond", serif !important;
+  font-family: "Sarabun", "IBM Plex Sans Thai", "Cormorant Garamond", sans-serif !important;
   font-style: italic;
   &:hover { color: $gold-600 !important; }
 }
@@ -562,7 +562,7 @@ body {
 .aux-nav-list .aux-nav-list-item {
   .site-button {
     color: $ink-600 !important;
-    font-family: "Cormorant Garamond", "Sarabun", serif !important;
+    font-family: "Sarabun", "IBM Plex Sans Thai", "Cormorant Garamond", Georgia, sans-serif !important;
     font-style: italic;
     font-size: 0.98em;
     &:hover {
@@ -588,7 +588,7 @@ body {
 }
 
 .fs-6 {
-  font-family: "Cormorant Garamond", "Sarabun", serif !important;
+  font-family: "Sarabun", "IBM Plex Sans Thai", "Cormorant Garamond", Georgia, sans-serif !important;
   font-style: italic;
   color: $ink-500 !important;
   font-size: 1.2em !important;
